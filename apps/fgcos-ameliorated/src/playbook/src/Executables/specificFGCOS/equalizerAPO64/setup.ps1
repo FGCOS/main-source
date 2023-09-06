@@ -1,1 +1,1 @@
-choco install equalizerapo
+choco install equalizerapo -y --force

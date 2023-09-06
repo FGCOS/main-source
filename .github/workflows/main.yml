@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set file name
-        run: echo "FILENAME=FGCOS-PB-${{ github.ref_name }}.apbx" >> $GITHUB_ENV
-
+        run: echo "FILENAME=Revi-PB-${{ github.ref_name }}.apbx" >> $GITHUB_ENV
+      
       - name: Archive content
         run: |
           7z a -p${{ secrets.PASSWORD }} -mhe=on "${{ env.FILENAME }}" ./src/*
-
+      
       - name: Release
         uses: svenstaro/upload-release-action@v2
         with:
