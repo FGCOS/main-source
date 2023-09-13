@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "commit": "cz",
+    "commit": "git add . && git-cz",
     "get-version": "node ./tools/get-version.js",
     "build:playbook": "nx run fgcos-ameliorated:build",
     "build:dipswitch": "echo \"dipswitch\"",
     "build:hidusbf": "echo \"hidusbf\"",
     "build:islc": "echo \"islc\"",
-    "build:msi_util": "echo \"msi_util\""
+    "build:msi_util": "echo \"msi_util\"",
+    "prepare": "husky install",
+    "commitizen": "commitizen"
   },
   "private": true,
   "devDependencies": {
+    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
     "@nx/esbuild": "16.7.4",
     "@nx/eslint-plugin": "16.7.4",
     "@nx/js": "16.7.4",
@@ -27,11 +30,20 @@
     "esbuild": "^0.17.17",
     "eslint": "8.46.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "nx": "16.7.4",
     "prettier": "^2.6.2",
     "typescript": "~5.1.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
+      "jiraLocation": "pre-type",
+      "jiraAppend": "."
+    }
   }
 }

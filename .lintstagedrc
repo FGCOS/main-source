@@ -1,0 +1,9 @@
+{
+  "{apps/libs}/**/*.{js,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "{apps/libs}/**/*.{css,scss,less,styl,html,md,json,yml,yaml}": [
+    "prettier --write"
+  ],
+}
